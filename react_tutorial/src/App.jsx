@@ -1,32 +1,16 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from 'react';
+import './App.css';
+import Gallery from './Gallery';
+import TodoList from './Todolist';
+import Profile from './Profile';
 
-function Profile() {
-  return (
-    <img
-      src="https://i.imgur.com/lICfvbD.jpg"
-      alt="Aklilu Lemma"
-    />
-  );
-}
 
-function  Gallery(){
-  return (
-    <section>
-      <h1>Amazing Scientists</h1>
-      <Profile />
-      <Profile />
-      <Profile />
-    </section>
-  )
-}
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <Gallery />
       <Gallery />
     </>
   );
