@@ -1,6 +1,8 @@
 import Profile from './Profile'
 import TodoList from './Todolist';
 import PackingList from './PackingList'
+import RecipeList from './Recipes'
+import Poem from './Poem'
   
   export default function  Gallery(){
     return (
@@ -8,7 +10,10 @@ import PackingList from './PackingList'
             <h1>Amazing Scientists</h1>
             <Profile />
             <TodoList />
-            <PackingList/>        
+            <PackingList/>    
+            <RecipeList /> 
+            <Poem />
+               
         </div>
 
     );

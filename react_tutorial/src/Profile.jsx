@@ -1,4 +1,5 @@
 import { getImageUrl } from './utils'
+import { people } from './data'
 
 const person = {
   name: 'Gregorio Y. Zara',
@@ -8,27 +9,7 @@ const person = {
   }
 }
 
-const people = [{
-  id: 0,
-  name: 'Creola Katherine Johnson',
-  profession: 'mathematician',
-}, {
-  id: 1,
-  name: 'Mario José Molina-Pasquel Henríquez',
-  profession: 'chemist',
-}, {
-  id: 2,
-  name: 'Mohammad Abdus Salam',
-  profession: 'physicist',
-}, {
-  id: 3,
-  name: 'Percy Lavon Julian',
-  profession: 'chemist',  
-}, {
-  id: 4,
-  name: 'Subrahmanyan Chandrasekhar',
-  profession: 'astrophysicist',
-}];
+
 
 const chemists = people.filter(person => 
   person.profession === "chemist"
@@ -36,28 +17,22 @@ const chemists = people.filter(person =>
 
 const listItems = chemists.map(person => 
   <li>
+    <img 
+      src={getImageUrl(person)}
+      alt={person.name}
+    />
     <p>
       <b>{person.name}</b>
       {' ' + person.profession + ' '}
-      known for {person.profession}
+      known for {person.accomplishment}
     </p>
   </li>
 );
 
-function Avatar(props){
-
-  let person = props.person;
-  let size = props.size;
+function Avatar(){
 
   return (
     <>
-      <img 
-        className="avatar"
-        src={getImageUrl(person)}
-        alt={person.name}
-        width={size}
-        height={size}
-      />
       <ul>{listItems}</ul>
     </>
     
@@ -84,14 +59,8 @@ export default function Profile() {
 
         
         
-        <Avatar 
-          person={{ name: 'Aklilu Lemma', imageId: 'lICfvbD' }}
-          size={150}
-        />
-        <Avatar 
-          person={{ name: 'Katsuko Saruhashi', imageId: 'YfeOqp2' }}
-          size={200}
-        />
+        <Avatar />
+  
 
       </>
       
